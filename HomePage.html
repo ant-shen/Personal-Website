@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Anthony Shen</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a class="active" href="HomePage.html">Home</a></li>
+            <li><a href="technical skills.html">Skills</a></li>
+            <li><a href="Work-Roles.html">Work/Roles</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="scroll-reveal">
+        <section>
+            <h2>About Me</h2>
+            <p>I am a student attending California Polytechnic University, Pomona pursuing a Computer Science Degree.</p>
+        </section>
+
+        <section>
+            <h2>Work/Roles</h2>
+            <p>Bronco Lifting Club Representative      2022 - present</p>
+
+            <p>Intramural Sports Assistant Supervisor      2022 - present</p>
+
+            <button onclick = "location.href = 'Work-Roles.html' "> Read More</button>
+           
+        </section>
+
+       
+
+        
+
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <a >Quantum Programming</a><br>
+                <a>ATM Machine Interface</a><br>
+                <a>Wikipedia Redesign </a><br>
+                <button onclick = "location.href = 'projects.html' "> Read More</button>
+            </ul>
+        </section>
+
+        <contact>
+            <h3>Contact Information</h3>
+            <p>Personal Email: <a href = mailto:anthony.shen11@gmail.com>anthony.shen11@gmail.com</a><br>
+               School Email: <a href = mailto:anthonyshen@cpp.edu>anthonyshen@cpp.edu</a><br>
+               LinkedIn: <a href = "https://www.linkedin.com/in/anthonyshen117/">Anthony Shen</a><br>
+               Powerlifting Instagram: <a href = "https://instagram.com/ant_shen_lifts?igshid=OGQ5ZDc2ODk2ZA==">@ant_shen_lifts</a>
+            </p>
+        </contact>
+    </main>
+
+    <footer>
+        <p>© 2023 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for reveal on scroll effect
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.scroll-reveal');
+
+            const isInViewport = el => {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            };
+
+            const revealElements = () => {
+                elements.forEach(element => {
+                    if (isInViewport(element)) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+
+            // Initial reveal on page load
+            revealElements();
+
+            // Reveal elements on scroll
+            window.addEventListener('scroll', revealElements);
+        }
+
+        revealOnScroll();
+    </script>
+    
+</body>
+</html>
